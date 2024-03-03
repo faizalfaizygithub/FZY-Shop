@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 TextStyle get subHeadingStyle {
-  return GoogleFonts.poiretOne(
-      textStyle: const TextStyle(
-          fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black));
+  return GoogleFonts.stoke(
+      textStyle: const TextStyle(fontSize: 20, color: Colors.black87));
 }
 
 TextStyle get smallTextStyle {
@@ -22,7 +21,7 @@ TextStyle get productHeadStyle {
 TextStyle get titleHeadStyle {
   return GoogleFonts.aBeeZee(
       textStyle:
-          const TextStyle(fontWeight: FontWeight.bold, color: Colors.black54));
+          const TextStyle(fontWeight: FontWeight.w500, color: Colors.black87));
 }
 
 TextStyle get cartstyle2 {
@@ -35,4 +34,8 @@ TextStyle get cartstyl {
   return GoogleFonts.aBeeZee(
       textStyle:
           const TextStyle(fontWeight: FontWeight.bold, color: Colors.white));
+}
+
+TextStyle get smallTextStyle2 {
+  return GoogleFonts.lato(textStyle: TextStyle(color: Colors.grey.shade600));
 }

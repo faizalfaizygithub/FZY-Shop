@@ -24,10 +24,7 @@ class HomePage extends StatelessWidget {
           Gyap(
             height: 10,
           ),
-          Text(
-            'Premium Quality Products',
-            style: smallTextStyle,
-          ),
+          Text('Premium Quality Products', style: titleHeadStyle),
           Gyap(
             height: 40,
           ),

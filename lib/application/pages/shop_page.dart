@@ -8,6 +8,30 @@ import 'package:provider/provider.dart';
 class ShopPage extends StatelessWidget {
   const ShopPage({super.key});
 
+  void addToCart(BuildContext context, index) {
+    showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+              content: const Text('Add this item to your Cart?'),
+              actions: [
+                MaterialButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: const Text('NO'),
+                ),
+                MaterialButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                    Provider.of<CartModel>(context, listen: false)
+                        .addItemToCart(index);
+                  },
+                  child: const Text('YES'),
+                )
+              ],
+            ));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,9 +74,7 @@ class ShopPage extends StatelessWidget {
                     discription: value.shopItems[index][2],
                     imagePath: value.shopItems[index][3],
                     ontap: () {
-                      addToCart(context);
-                      Provider.of<CartModel>(context, listen: false)
-                          .addItemToCart(index);
+                      addToCart(context, index);
                     },
                   );
                 },
@@ -62,28 +84,5 @@ class ShopPage extends StatelessWidget {
         ],
       ),
     );
-  }
-
-  void addToCart(BuildContext context) {
-    showDialog(
-        context: context,
-        builder: (context) => AlertDialog(
-              content: const Text('Add this item to your Cart?'),
-              actions: [
-                MaterialButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  child: const Text('NO'),
-                ),
-                MaterialButton(
-                  onPressed: () {
-                    context.read<CartModel>().addToCart();
-                    Navigator.pop(context);
-                  },
-                  child: const Text('YES'),
-                )
-              ],
-            ));
   }
 }

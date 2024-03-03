@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mini_mall/application/pages/cartPage.dart';
 import 'package:mini_mall/application/pages/home_page.dart';
+import 'package:mini_mall/application/pages/payment_page.dart';
 import 'package:mini_mall/application/pages/shop_page.dart';
 import 'package:mini_mall/application/themes/light_mode.dart';
 import 'package:mini_mall/data/cart_model.dart';
@@ -23,8 +24,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         routes: {
           'homePage': (context) => const HomePage(),
-          'shopPage': (context) => ShopPage(),
+          'shopPage': (context) => const ShopPage(),
           'cartPage': (context) => const CartPage(),
+          'paymentPage': (context) => const MyPaymentPage()
         },
         theme: lightMode,
         debugShowCheckedModeBanner: false,

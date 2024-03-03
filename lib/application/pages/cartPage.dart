@@ -24,6 +24,8 @@ class CartPage extends StatelessWidget {
                   onPressed: () {
                     context.read<CartModel>().removeFromCart();
                     Navigator.pop(context);
+                    Provider.of<CartModel>(context, listen: false)
+                        .removeItemFromCart(index);
                   },
                   child: const Text('YES'),
                 )
@@ -76,14 +78,14 @@ class CartPage extends StatelessWidget {
                               ),
                               title: Text(
                                 value.cartItems[index][0],
+                                style: titleHeadStyle,
+                              ),
+                              subtitle: Text(
+                                '₹ ' + value.cartItems[index][1],
                                 style: smallTextStyle,
                               ),
-                              subtitle: Text('₹ ' + value.cartItems[index][1]),
                               trailing: IconButton(
                                   onPressed: () {
-                                    Provider.of<CartModel>(context,
-                                            listen: false)
-                                        .removeItemFromCart(index);
                                     removeFromCart(context, index);
                                   },
                                   icon: const Icon(Icons.cancel)),
@@ -117,11 +119,16 @@ class CartPage extends StatelessWidget {
                           ),
                         ),
                         MyButton(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.pushNamed(context, 'paymentPage');
+                          },
                           size: 1,
-                          child: Text(
-                            'Pay Now',
-                            style: smallTextStyle,
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                              'Pay Now',
+                              style: titleHeadStyle,
+                            ),
                           ),
                         ),
                       ],
