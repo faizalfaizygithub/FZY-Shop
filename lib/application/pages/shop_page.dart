@@ -12,13 +12,19 @@ class ShopPage extends StatelessWidget {
     showDialog(
         context: context,
         builder: (context) => AlertDialog(
-              content: const Text('Add this item to your Cart?'),
+              content: Text(
+                'Add this item to your Cart?',
+                style: titleHeadStyle,
+              ),
               actions: [
                 MaterialButton(
                   onPressed: () {
                     Navigator.pop(context);
                   },
-                  child: const Text('NO'),
+                  child: Text(
+                    'NO',
+                    style: titleHeadStyle,
+                  ),
                 ),
                 MaterialButton(
                   onPressed: () {
@@ -26,7 +32,10 @@ class ShopPage extends StatelessWidget {
                     Provider.of<CartModel>(context, listen: false)
                         .addItemToCart(index);
                   },
-                  child: const Text('YES'),
+                  child: Text(
+                    'YES',
+                    style: titleHeadStyle,
+                  ),
                 )
               ],
             ));

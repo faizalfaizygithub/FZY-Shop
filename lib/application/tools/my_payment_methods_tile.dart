@@ -25,19 +25,16 @@ class MyPaymentMethodTile extends StatelessWidget {
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
           leading: Icon(
             icon,
-            color: Colors.grey.shade600,
+            color: Colors.grey.shade700,
           ),
-          title: Text(
-            text,
-            style: titleHeadStyle,
-          ),
+          title: Text(text, style: cartstyle2),
           subtitle: Text(
             subtitle,
             style: smallTextStyle2,
           ),
           trailing: Icon(
             Icons.arrow_forward_ios,
-            color: Colors.grey.shade600,
+            color: Colors.grey.shade700,
           ),
         ),
       ),

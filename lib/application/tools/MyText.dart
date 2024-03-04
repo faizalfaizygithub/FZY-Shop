@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 TextStyle get subHeadingStyle {
   return GoogleFonts.stoke(
-      textStyle: const TextStyle(fontSize: 20, color: Colors.black87));
+      textStyle: const TextStyle(fontSize: 20, color: Colors.white));
 }
 
 TextStyle get smallTextStyle {
@@ -21,19 +21,19 @@ TextStyle get productHeadStyle {
 TextStyle get titleHeadStyle {
   return GoogleFonts.aBeeZee(
       textStyle:
-          const TextStyle(fontWeight: FontWeight.w500, color: Colors.black87));
+          const TextStyle(fontWeight: FontWeight.w500, color: Colors.white));
 }
 
 TextStyle get cartstyle2 {
   return GoogleFonts.abel(
       textStyle:
-          const TextStyle(fontWeight: FontWeight.bold, color: Colors.white));
+          const TextStyle(fontWeight: FontWeight.bold, color: Colors.black87));
 }
 
 TextStyle get cartstyl {
   return GoogleFonts.aBeeZee(
       textStyle:
-          const TextStyle(fontWeight: FontWeight.bold, color: Colors.white));
+          const TextStyle(fontWeight: FontWeight.bold, color: Colors.black87));
 }
 
 TextStyle get smallTextStyle2 {

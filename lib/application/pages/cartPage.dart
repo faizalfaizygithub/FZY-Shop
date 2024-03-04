@@ -12,13 +12,19 @@ class CartPage extends StatelessWidget {
     showDialog(
         context: context,
         builder: (context) => AlertDialog(
-              content: const Text('Remove this item from Cart?'),
+              content: Text(
+                'Remove this item from Cart?',
+                style: titleHeadStyle,
+              ),
               actions: [
                 MaterialButton(
                   onPressed: () {
                     Navigator.pop(context);
                   },
-                  child: const Text('NO'),
+                  child: Text(
+                    'NO',
+                    style: titleHeadStyle,
+                  ),
                 ),
                 MaterialButton(
                   onPressed: () {
@@ -27,7 +33,10 @@ class CartPage extends StatelessWidget {
                     Provider.of<CartModel>(context, listen: false)
                         .removeItemFromCart(index);
                   },
-                  child: const Text('YES'),
+                  child: Text(
+                    'YES',
+                    style: titleHeadStyle,
+                  ),
                 )
               ],
             ));
@@ -78,11 +87,11 @@ class CartPage extends StatelessWidget {
                               ),
                               title: Text(
                                 value.cartItems[index][0],
-                                style: titleHeadStyle,
+                                style: cartstyle2,
                               ),
                               subtitle: Text(
                                 '₹ ' + value.cartItems[index][1],
-                                style: smallTextStyle,
+                                style: cartstyle2,
                               ),
                               trailing: IconButton(
                                   onPressed: () {

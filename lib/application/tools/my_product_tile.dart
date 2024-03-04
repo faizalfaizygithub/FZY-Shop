@@ -78,11 +78,17 @@ class MyProductTile extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('₹' + prices),
+              Text(
+                '₹' + prices,
+                style: cartstyl,
+              ),
               MyButton(
                 onTap: ontap,
                 size: 15,
-                child: const Icon(Icons.add),
+                child: const Icon(
+                  Icons.add,
+                  color: Colors.white,
+                ),
               ),
             ],
           ),

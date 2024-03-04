@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mini_mall/application/tools/MyText.dart';
 import 'package:mini_mall/application/tools/gyap.dart';
-import 'package:mini_mall/application/tools/my_button.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -28,12 +27,22 @@ class HomePage extends StatelessWidget {
           Gyap(
             height: 40,
           ),
-          MyButton(
+          GestureDetector(
             onTap: () {
               Navigator.pushNamed(context, 'shopPage');
             },
-            size: 25,
-            child: const Icon(Icons.arrow_forward),
+            child: Container(
+              width: 100,
+              padding: EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15),
+                color: Colors.white70,
+              ),
+              child: const Icon(
+                Icons.arrow_forward_ios,
+                color: Colors.black,
+              ),
+            ),
           ),
         ]),
       ),
