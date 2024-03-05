@@ -35,12 +35,16 @@ class MyPaymentPage extends StatelessWidget {
                 height: 30,
               ),
               MyPaymentMethodTile(
-                  ontap: () {},
+                  ontap: () {
+                    Navigator.pushNamed(context, 'UPIpage');
+                  },
                   text: 'UPI',
                   subtitle: 'Pay by any UPI Apps',
                   icon: Icons.phone_android_rounded),
               MyPaymentMethodTile(
-                  ontap: () {},
+                  ontap: () {
+                    Navigator.pushNamed(context, 'creditcardPage');
+                  },
                   text: 'Credit/Debit/ATM cards',
                   subtitle: 'Add and secure cards as per RBI guidelines',
                   icon: Icons.credit_card),
