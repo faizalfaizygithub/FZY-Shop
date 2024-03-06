@@ -1,12 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:mini_mall/application/tools/MyText.dart';
+import 'package:mini_mall/application/tools/gyap.dart';
 import 'package:mini_mall/application/tools/my_drawer.dart';
 import 'package:mini_mall/application/tools/my_product_tile.dart';
 import 'package:mini_mall/data/cart_model.dart';
 import 'package:provider/provider.dart';
 
-class ShopPage extends StatelessWidget {
+class ShopPage extends StatefulWidget {
   const ShopPage({super.key});
+
+  @override
+  State<ShopPage> createState() => _ShopPageState();
+}
+
+class _ShopPageState extends State<ShopPage> {
+  int count = 0;
+  bool isvisible = false;
+  launchNotification() {
+    count == 0 ? isvisible = !isvisible : 0;
+    count++;
+    setState(() {});
+  }
 
   void addToCart(BuildContext context, index) {
     showDialog(
@@ -28,6 +42,7 @@ class ShopPage extends StatelessWidget {
                 ),
                 MaterialButton(
                   onPressed: () {
+                    launchNotification();
                     Navigator.pop(context);
                     Provider.of<CartModel>(context, listen: false)
                         .addItemToCart(index);
@@ -54,11 +69,27 @@ class ShopPage extends StatelessWidget {
           style: subHeadingStyle,
         ),
         actions: [
-          IconButton(
-              onPressed: () {
-                Navigator.pushNamed(context, 'cartPage');
-              },
-              icon: const Icon(Icons.shopping_cart))
+          Badge(
+            label: Text(
+              count.toString(),
+              style: cartstyl,
+            ),
+            backgroundColor: Colors.white54,
+            smallSize: 5,
+            largeSize: 20,
+            alignment: Alignment.topRight,
+            isLabelVisible: isvisible,
+            child: IconButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, 'cartPage');
+                },
+                icon: const Icon(
+                  Icons.shopping_cart,
+                )),
+          ),
+          Gyap(
+            width: 10,
+          )
         ],
       ),
       drawer: const MyDrawer(),

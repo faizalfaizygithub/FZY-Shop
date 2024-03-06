@@ -5,8 +5,14 @@ import 'package:mini_mall/application/tools/my_button.dart';
 import 'package:mini_mall/data/cart_model.dart';
 import 'package:provider/provider.dart';
 
-class CartPage extends StatelessWidget {
+class CartPage extends StatefulWidget {
   const CartPage({super.key});
+
+  @override
+  State<CartPage> createState() => _CartPageState();
+}
+
+class _CartPageState extends State<CartPage> {
 // remove item from cart
   void removeFromCart(BuildContext context, index) {
     showDialog(
